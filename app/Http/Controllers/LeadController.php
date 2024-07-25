@@ -21,8 +21,8 @@ class LeadController extends Controller
         try {
             $data = $this->service->store($request);
             return response()->json([
-               'message' => 'lead was created',
-               'data' => $data
+                'message' => 'lead was created',
+                'data' => $data->toArray()
             ]);
         } catch (\AmoCRM\Exception $e) {
             response()->json([
